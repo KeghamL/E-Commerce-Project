@@ -24,7 +24,7 @@
                 <a href="/productcreate"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add
                         Post</button></a>
             </li>
-            <li>
+            <li class="nav-item active">>
                 <a href="/dashboard"><button class="btn btn-outline-success my-2 my-sm-0"
                         type="submit"></button></button></a>
             </li>
