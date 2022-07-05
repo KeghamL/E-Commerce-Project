@@ -25,7 +25,7 @@
                         Post</button></a>
             </li>
             <section class="search">
-                @if (!$products->description->isEmpty())
+                @if (!$products->isEmpty())
                     <form action="/productsearch" method="GET">
                 @endif
                 <div class="form-group">
