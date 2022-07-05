@@ -25,17 +25,17 @@
                         Post</button></a>
             </li>
             <section class="search">
-                @if (isset($products->description))
-                    <form action="/productsearch" method="GET">
-                        <div class="form-group">
+                <form action="/productsearch" method="GET">
+                    <div class="form-group">
+                        @if (isset($products->description))
                             <input type="search" class="form-control" name="find" placeholder="Search Here...">
-                        </div>
-                        @endif
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary "
-                                style="position: absolute; left:280px; bottom:0.5px">Search</button>
-                        </div>
-                    </form>
+                    </div>
+                    @endif
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary "
+                            style="position: absolute; left:280px; bottom:0.5px">Search</button>
+                    </div>
+                </form>
             </section>
             <li class="nav-item" style="position: absolute; right:30px">
                 <form method="POST" action="{{ route('logout') }}">
