@@ -2,7 +2,7 @@
     <a class="navbar-brand">{{ Session::get('user')->fname }}</a>
     <div class="nav-item active">>
         <a href="/dashboard"><button class="btn btn-info" type="submit"
-                style="margin-left: 20px">Home</button></button></a>
+                style="margin-right: 20px">Home</button></button></a>
     </div>
     <div class="pull-right">
         <a class="btn btn-danger" href="javascript:history.back()"> Back</a>
