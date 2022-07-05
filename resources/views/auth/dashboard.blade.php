@@ -25,16 +25,14 @@
                         Post</button></a>
             </li>
             <section class="search">
-                @if (!$products->isEmpty())
-                    <form action="/productsearch" method="GET">
-                @endif
-                <div class="form-group">
-                    <input type="search" class="form-control" name="find" placeholder="Search Here...">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary "
-                        style="position: absolute; left:280px; bottom:0.5px">Search</button>
-                </div>
+                <form action="/productsearch" method="GET">
+                    <div class="form-group">
+                        <input type="search" class="form-control" name="find" placeholder="Search Here...">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary "
+                            style="position: absolute; left:280px; bottom:0.5px">Search</button>
+                    </div>
                 </form>
             </section>
             <li class="nav-item" style="position: absolute; right:30px">

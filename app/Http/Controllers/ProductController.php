@@ -149,8 +149,11 @@ class ProductController extends Controller
             ->with('success', 'Product Deleted Successfully');
     }
 
-    public function search()
+    public function search(Request $request)
     {
+        $request->validate([
+            'find' => 'required',
+        ]);
         $search_text = $_GET['find'];
         $products = Product::where('description', 'iLIKE', '%' . $search_text . '%')->get();
 
