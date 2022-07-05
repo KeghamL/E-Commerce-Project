@@ -33,6 +33,7 @@
 
 .product-content a{
     text-decoration: none;
+    color: black;
 }
 .product-grid .product-hot-label{
     color: #fff;
