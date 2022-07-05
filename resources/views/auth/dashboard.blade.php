@@ -25,7 +25,7 @@
                         Post</button></a>
             </li>
             <li class="nav-item active">>
-                <a href="/dashboard"><button class="btn btn-info" type="submit">Home</button></button></a>
+                <a href="/dashboard"><button class="btn btn-light" type="submit">Home</button></button></a>
             </li>
             <section class="search">
                 <form action="/productsearch" method="GET">
@@ -33,7 +33,7 @@
                         <input type="search" class="form-control" name="find" placeholder="Search Here...">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary "
+                        <button type="submit" class="btn btn-primary"
                             style="position: absolute; left:280px; bottom:0.5px">Search</button>
                     </div>
                 </form>
