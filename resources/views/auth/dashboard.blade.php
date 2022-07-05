@@ -30,6 +30,7 @@
                         <div class="form-group">
                             <input type="search" class="form-control" name="find" placeholder="Search Here...">
                         </div>
+                        @endif
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary "
                                 style="position: absolute; left:280px; bottom:0.5px">Search</button>
