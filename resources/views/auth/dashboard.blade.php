@@ -88,8 +88,12 @@
                         </ul>
                     </div>
                     <div class="product-content">
-                        <h3 class="title">{{ $product->name }}</h3>
-                        <p class="title">{{ $product->description }}</p>
+                        <a href="/productshow/{{ $product->id }}">
+                            <h3 class="title">{{ $product->name }}</h3>
+                        </a>
+                        <a href="/productshow/{{ $product->id }}">
+                            <p class="title">{{ $product->description }}</p>
+                        </a>
                         <div class="price">{{ $product->price }}</div>
                     </div>
                 </div>
