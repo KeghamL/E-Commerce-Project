@@ -87,7 +87,7 @@
                 <P>Your Registered Allready? LogIn<a href='login'>Here</a></P>
 
                 <div class="form-group">
-                    <button class="btn btn-block btn-primary" type="button">Register</button>
+                    <button class="btn btn-block btn-primary" type="submit">Register</button>
                 </div>
             </form>
 
