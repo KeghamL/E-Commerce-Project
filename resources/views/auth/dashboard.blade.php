@@ -25,8 +25,7 @@
                         Post</button></a>
             </li>
             <li class="nav-item active">>
-                <a href="/dashboard"><button class="btn btn-dark"
-                        type="submit">Home</button></button></a>
+                <a href="/dashboard"><button class="btn btn-info" type="submit">Home</button></button></a>
             </li>
             <section class="search">
                 <form action="/productsearch" method="GET">
