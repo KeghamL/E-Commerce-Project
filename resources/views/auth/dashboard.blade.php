@@ -24,20 +24,17 @@
                 <a href="/productcreate"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add
                         Post</button></a>
             </li>
-            @foreach ($results as $result)
-            @endforeach
             <section class="search">
-                @if (!$result->isEmpty())
+                @if (isset($products->description))
                     <form action="/productsearch" method="GET">
                         <div class="form-group">
                             <input type="search" class="form-control" name="find" placeholder="Search Here...">
                         </div>
-                @endif
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary "
-                        style="position: absolute; left:280px; bottom:0.5px">Search</button>
-                </div>
-                </form>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary "
+                                style="position: absolute; left:280px; bottom:0.5px">Search</button>
+                        </div>
+                    </form>
             </section>
             <li class="nav-item" style="position: absolute; right:30px">
                 <form method="POST" action="{{ route('logout') }}">
