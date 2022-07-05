@@ -152,11 +152,10 @@ class ProductController extends Controller
     public function search()
     {
         $search_text = $_GET['find'];
-        dd($search_text);
-        // if (!isEmpty($search_text)) {
+        if (!$search_text == "") {
 
             $products = Product::where('description', 'iLIKE', '%' . $search_text . '%')->get();
-        // }
+        }
         return view('products.search', compact('products'));
     }
 }
