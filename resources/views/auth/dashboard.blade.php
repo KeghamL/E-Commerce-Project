@@ -87,7 +87,7 @@
                             @endif
                         </ul>
                     </div>
-                    <div class="product-content" style="text-decoration: none">
+                    <div class="product-content">
                         <a href="/productshow/{{ $product->id }}">
                             <h3 class="title">{{ $product->name }}</h3>
                         </a>

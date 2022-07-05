@@ -30,6 +30,10 @@
     opacity: 1;
     transform: scale(1.5);
 }
+
+.product-content a{
+    text-decoration: none;
+}
 .product-grid .product-hot-label{
     color: #fff;
     background: #222;
