@@ -24,8 +24,10 @@
                 <a href="/productcreate"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add
                         Post</button></a>
             </li>
+            @foreach ($results as $result)
+            @endforeach
             <section class="search">
-                @if (!isEmpty)
+                @if (!$result->isEmpty())
                     <form action="/productsearch" method="GET">
                         <div class="form-group">
                             <input type="search" class="form-control" name="find" placeholder="Search Here...">
