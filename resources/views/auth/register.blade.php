@@ -35,7 +35,7 @@
                 <hr>
             </div>
             <form action="{{ route('register-user') }}" method="POST">
-                @csrf
+                {{ csrf_field() }}
                 @if ($message = Session::get('success'))
                     <div class="alert alert-success">
                         <p>{{ $message }}</p>
