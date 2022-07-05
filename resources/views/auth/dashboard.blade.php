@@ -25,7 +25,7 @@
                         Post</button></a>
             </li>
             <section class="search">
-                @if (!$result->isEmpty)
+                @if (!isEmpty)
                     <form action="/productsearch" method="GET">
                         <div class="form-group">
                             <input type="search" class="form-control" name="find" placeholder="Search Here...">
