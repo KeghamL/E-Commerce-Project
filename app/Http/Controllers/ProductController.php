@@ -155,7 +155,7 @@ class ProductController extends Controller
         if (!$search_text == "") {
 
             $products = Product::where('description', 'iLIKE', '%' . $search_text . '%')->get();
+            return view('products.search', compact('products'));
         }
-        return view('products.search', compact('products'));
     }
 }
