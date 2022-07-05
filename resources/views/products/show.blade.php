@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand">{{ Session::get('user')->fname }}</a>
-    <div class="nav-item active">>
+    <div class="nav-item active" style="padding-right: 20px">
         <a href="/dashboard"><button class="btn btn-info" type="submit">Home</button></button></a>
     </div>
     <div class="pull-right">

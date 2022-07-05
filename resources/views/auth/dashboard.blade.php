@@ -24,9 +24,6 @@
                 <a href="/productcreate"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add
                         Post</button></a>
             </li>
-            <li class="nav-item active">>
-                <a href="/dashboard"><button class="btn btn-info" type="submit">Home</button></button></a>
-            </li>
             <section class="search">
                 <form action="/productsearch" method="GET">
                     <div class="form-group">
