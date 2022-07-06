@@ -12,8 +12,6 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
         integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous">
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 
 <body>
@@ -29,13 +27,7 @@
             <section class="search">
                 <form action="/productsearch" method="GET">
                     <div class="form-group">
-                        <select id="livesearch" style="width: 200px">
-                            <option></option>
-                            @foreach ($products as $product)
-                                <option>{{ $product->description }}</option>
-                            @endforeach
-                        </select>
-                        {{-- <input type="search" class="form-control" name="find" placeholder="Search Here..."> --}}
+                        <input type="search" class="form-control" name="find" placeholder="Search Here...">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary "
@@ -111,12 +103,6 @@
     <div class="paginate">
         {!! $products->links() !!}
     </div>
-    <script type="text/javascript">
-        $("#livesearch").select2({
-            placeholder: 'Search Here...',
-            allowClear: true
-        });
-    </script>
 </body>
 
 </html>
