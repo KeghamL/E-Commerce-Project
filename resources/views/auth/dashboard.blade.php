@@ -30,7 +30,7 @@
                         <select>
                             <option>
                                 @foreach ($products as $product)
-                                    {{ $products->description }}
+                                    {{ $product->description }}
                                 @endforeach
                             </option>
                         </select>
