@@ -28,6 +28,7 @@
                 <form action="/productsearch" method="GET">
                     <div class="form-group">
                         <input type="search" class="form-control" name="find" placeholder="Search Here...">
+                        <select></select>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary "
