@@ -29,7 +29,7 @@
             <section class="search">
                 <form action="/productsearch" method="GET">
                     <div class="form-group">
-                        <select id="livesearch">
+                        <select id="livesearch" style="width: 200px">
                             <option></option>
                             @foreach ($products as $product)
                                 <option>{{ $product->description }}</option>
