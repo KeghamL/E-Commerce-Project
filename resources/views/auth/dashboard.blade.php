@@ -29,7 +29,10 @@
                     <div class="form-group">
                         <select>
                             <option>
-                                {{ $products->description }} </option>
+                                @foreach ($products as $product)
+                                    {{ $products->description }}
+                                @endforeach
+                            </option>
                         </select>
                         {{-- <input type="search" class="form-control" name="find" placeholder="Search Here..."> --}}
                     </div>
