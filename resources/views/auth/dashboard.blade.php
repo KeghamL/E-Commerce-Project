@@ -115,7 +115,7 @@
         $("#livesearch").select2({
             placeholder: 'Search Here...',
             allowClear: true
-        })
+        });
     </script>
 </body>
 
