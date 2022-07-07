@@ -36,6 +36,13 @@
                             style="position: absolute; left:280px; bottom:0.5px">Search</button>
                     </div>
                 </form>
+
+                <div class="col-md-8">
+                    <div class="card mycard m-2 p-2" style="width:18rem;">
+
+                    </div>
+                </div>
+
             </section>
             <li class="nav-item" style="position: absolute; right:30px">
                 <form method="POST" action="{{ route('logout') }}">
@@ -121,16 +128,16 @@
         $(document).ready(function() {
             $('#search').on('keyup', function() {
                 var value = $(this).val();
-                console.log(value);
-                // $.ajax({
-                //     type: "",
-                //     url: "",
-                //     data: "",
-                //     datatype: "",
-                //     success: function(response) {
-
-                //     }
-                // })
+                $.ajax({
+                    type: "get",
+                    url: "/productsearch",
+                    data: {
+                        'search': value
+                    },
+                    success: function(data) {
+                        $('.mycard').html(data);
+                    }
+                })
             });
         });
     </script>
