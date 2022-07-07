@@ -12,6 +12,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
         integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous">
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -27,7 +28,8 @@
             <section class="search">
                 <form action="/productsearch" method="GET">
                     <div class="form-group">
-                        <input type="search" class="form-control" name="find" placeholder="Search Here...">
+                        <input type="search" id="search" class="form-control" name="find"
+                            placeholder="Search Here...">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary "
@@ -103,6 +105,36 @@
     <div class="paginate">
         {!! $products->links() !!}
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'csrftoken': '{{ csrf_token() }}'
+            }
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#search').on('keyup', function() {
+                var value = $(this).val();
+                console.log(value);
+                // $.ajax({
+                //     type: "",
+                //     url: "",
+                //     data: "",
+                //     datatype: "",
+                //     success: function(response) {
+
+                //     }
+                // })
+            });
+        });
+    </script>
+
 </body>
 
 </html>
