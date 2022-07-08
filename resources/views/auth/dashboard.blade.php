@@ -30,16 +30,13 @@
                     <div class="form-group">
                         <input type="search" id="search" class="form-control" name="find"
                             placeholder="Search Here...">
+                        <div id="searchlist"></div>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary "
                             style="position: absolute; left:280px; bottom:0.5px">Search</button>
                     </div>
-                    <div>
-                        <ul class="searchBox"></ul>
-                    </div>
                 </form>
-
             </section>
             <li class="nav-item" style="position: absolute; right:30px">
                 <form method="POST" action="{{ route('logout') }}">
@@ -125,24 +122,31 @@
     </script>
 
     <script>
-        $(document).ready(function() {
-            $('#search').on('keyup', function() {
+        $(documnet).ready(function() {
+            $('#search').keyup(function() {
                 var value = $(this).val();
-                $.ajax({
-                    type: "get",
-                    url: "/productsearch",
-                    data: {
-                        'find': value
-                    },
-                    success: function(data) {
-                        $('.searchBox').empty();
-                        data.forEach(item => {
-                            $('.searchBox').append(`<li>${item.description}</li>`)
-                                .fadeIn(3000);
-                        })
+                if (value != '') {
+                    $.ajax({
+                        url: "/productsearch",
+                        method: "POST",
+                        data: {
+                            value: value
+                        },
 
-                    }
-                })
+                        success: function(data) {
+                            $('#searchlist').fadeIn();
+                            $('#searchlist').html(data);
+                        }
+                    });
+
+                } else {
+                    $('#searchlist').fadeOut();
+                    $('#searchlist').html("");
+                }
+            });
+            $(documnet).on('click', 'li', function() {
+                $('#search').val($(this).text());
+                $('#searchlist').fadeOut();
             });
         });
     </script>
