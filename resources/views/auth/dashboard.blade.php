@@ -129,7 +129,7 @@
                     type: "get",
                     url: "/productsearch",
                     data: {
-                        'search': value
+                        'find': value
                     },
                     success: function(data) {
                         $('.search').html(data);

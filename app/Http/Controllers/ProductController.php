@@ -152,9 +152,9 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         $request->validate([
-            'find' => 'required',
+            'search' => 'required',
         ]);
-        $search_text = $_GET['find'];
+        $search_text = $_GET['search'];
         $products = Product::where('description', 'iLIKE', '%' . $search_text . '%')->get();
 
         return view('products.search', compact('products'));
