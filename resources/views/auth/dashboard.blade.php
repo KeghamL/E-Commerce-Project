@@ -35,7 +35,7 @@
                         <button type="submit" class="btn btn-primary "
                             style="position: absolute; left:280px; bottom:0.5px">Search</button>
                     </div>
-                    <div >
+                    <div>
                         <ul class="searchBox"></ul>
                     </div>
                 </form>
@@ -135,9 +135,9 @@
                         'find': value
                     },
                     success: function(data) {
-                         $('.searchBox').empty();
+                        $('.searchBox').empty();
                         data.forEach(item => {
-                            $('.searchBox').append(`<li>${item.description}</li>`);
+                            $('.searchBox').append(`<li>${item.description}</li>`).fadeOut();
                         })
 
                     }
