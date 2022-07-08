@@ -127,7 +127,7 @@
                 var value = $(this).val();
                 if (value != '') {
                     $.ajax({
-                        url: "/productsearch",
+                        url: "/productsearchlist",
                         method: "POST",
                         data: {
                             value: value
