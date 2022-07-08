@@ -112,12 +112,15 @@
     <div class="paginate">
         {!! $products->links() !!}
     </div>
+
+
+
+    {{-- JQerry + Ajax --}}
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-
-
     <script type="text/javascript">
-        $.ajaxSetup({
+        $.ajax({
             headers: {
                 'csrftoken': '{{ csrf_token() }}'
             }
