@@ -37,13 +37,12 @@
                     </div>
                 </form>
 
-                {{-- <div class="col-md-8">
-                    <div class="card mycard m-2 p-2" style="width:18rem;">
-
-                    </div>
-                </div> --}}
-
             </section>
+            <div class="col-md-8">
+                <div class="card mycard m-2 p-2" style="width:18rem;">
+
+                </div>
+            </div>
             <li class="nav-item" style="position: absolute; right:30px">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
@@ -117,7 +116,7 @@
 
     {{-- JQerry + Ajax --}}
 
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script type="text/javascript">
         $.ajax({
@@ -138,12 +137,12 @@
                         'search': value
                     },
                     success: function(data) {
-                        $('.form-control').html(data);
+                        $('.mycard').html(data);
                     }
                 })
             });
         });
-    </script> --}}
+    </script>
 
 </body>
 
