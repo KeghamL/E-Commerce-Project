@@ -135,6 +135,7 @@
                         'find': value
                     },
                     success: function(data) {
+                         $('.searchBox').empty();
                         data.forEach(item => {
                             $('.searchBox').append(`<li>${item.description}</li>`);
                         })
