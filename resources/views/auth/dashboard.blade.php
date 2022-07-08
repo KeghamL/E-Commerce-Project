@@ -137,7 +137,8 @@
                     success: function(data) {
                         $('.searchBox').empty();
                         data.forEach(item => {
-                            $('.searchBox').append(`<li>${item.description}</li>`).fadeOut(3000);
+                            $('.searchBox').append(`<li>${item.description}</li>`)
+                                .fadeIn(3000);
                         })
 
                     }
