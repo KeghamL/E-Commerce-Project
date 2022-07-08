@@ -157,7 +157,7 @@ class ProductController extends Controller
         $search_text = $_GET['find'];
         $products = Product::where('description', 'iLIKE', '%' . $search_text . '%')->get();
 
-        return view('products.search');
+        return view('products.search', compact('products'));
     }
 
     public function livesearch(Request $request)
