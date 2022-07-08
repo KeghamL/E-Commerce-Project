@@ -137,9 +137,7 @@
                     success: function(data) {
                         $('.searchBox').empty();
                         data.forEach(item => {
-                            setInterval(fadeout, 30000);
-                            $('.searchBox').append(`<li>${item.description}</li>`)
-                                .fadeOut();
+                            $('.searchBox').append(`<li>${item.description}</li>`).fadeOut(3000);
                         })
 
                     }
