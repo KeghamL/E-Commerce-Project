@@ -35,6 +35,9 @@
                         <button type="submit" class="btn btn-primary "
                             style="position: absolute; left:280px; bottom:0.5px">Search</button>
                     </div>
+                    <div >
+                        <ul class="searchBox"></ul>
+                    </div>
                 </form>
 
             </section>
@@ -132,7 +135,10 @@
                         'find': value
                     },
                     success: function(data) {
-                        $('.search').html(data);
+                        data.forEach(item => {
+                            $('.searchBox').append(`<li>${item.description}</li>`);
+                        })
+
                     }
                 })
             });
