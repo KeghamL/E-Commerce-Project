@@ -168,8 +168,19 @@ class ProductController extends Controller
 
             $products = Product::where('description', 'LIKE', '%' . $request->find . '%')->get();
 
-            return response()->json($output);
+            if ($products) {
+
+                foreach ($products as $product) {
+
+                    $output .= '<li>' . $product->description . '</li>';
+                }
+            } else {
+                $output .= '<li>Search Not Found!</li>';
+            }
+
+            $output .= '</ul>';
+            echo $output;
         }
-        return view('products.search');
+        // return view('products.search');
     }
 }
