@@ -166,24 +166,9 @@ class ProductController extends Controller
 
             $output = '';
 
-            $products = Product::where('name', 'LIKE', '%' . $request->find . '%')
-                ->orwhere('price', 'LIKE', '%' . $request->find . '%')
-                ->orwhere('description', 'LIKE', '%' . $request->find . '%')->get();
+            $products = Product::where('description', 'LIKE', '%' . $request->find . '%')->get();
 
-            if ($products) {
-
-                foreach ($products as $product) {
-
-                    '<div class="card-body">
-                    <img class="card-img-top" src="' . $product->image . '" alt="Card image cap">
-                        <h5 class="card-title"><b>' . $product->name . '</b></h5>
-                        <h5 class="card-title"><b class="text-success">' . $product->description . '</b></h5>
-                        <h5 class="card-title">$' . $product->price . '</h5>
-                    </div>
-                  ';
-                }
-                return response()->json($output);
-            }
+            return response()->json($output);
         }
         return view('products.search');
     }
