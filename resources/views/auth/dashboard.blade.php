@@ -138,7 +138,7 @@
                         'search': value
                     },
                     success: function(data) {
-                        $('.mycard').html(data);
+                        $('.form-control').html(data);
                     }
                 })
             });
