@@ -128,7 +128,7 @@
                 if (value != '') {
                     $.ajax({
                         url: "/productsearchlist",
-                        method: "POST",
+                        method: "GET",
                         data: {
                             value: value
                         },
