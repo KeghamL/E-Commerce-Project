@@ -37,11 +37,11 @@
                     </div>
                 </form>
 
-                <div class="col-md-8">
+                {{-- <div class="col-md-8">
                     <div class="card mycard m-2 p-2" style="width:18rem;">
 
                     </div>
-                </div>
+                </div> --}}
 
             </section>
             <li class="nav-item" style="position: absolute; right:30px">
