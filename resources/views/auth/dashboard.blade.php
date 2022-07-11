@@ -114,7 +114,7 @@
 
     <script>
         var path = "{{ route('auto-complete') }}";
-        $('input.typehead').typehead({
+        $('#search').typehead({
             source: function(terms, process) {
                 return $.get(path, {
                     terms: terms
