@@ -30,6 +30,6 @@ Route::get('/productedit/{product}', [ProductController::class, 'edit'])->name('
 Route::put('/productupdate/{product}', [ProductController::class, 'update'])->name('product-update');
 Route::delete('/productdelete/{product}', [ProductController::class, 'destroy'])->name('product-delete');
 Route::get('/productsearch', [ProductController::class, 'search'])->name('product-search');
-Route::get('/productsearchlist', [ProductController::class, 'livesearch'])->name('product-searchlist');
 Route::post('/addstar', [ReviewController::class, 'add'])->name('add-star');
 Route::delete('/reviewdelete/{review}', [ReviewController::class, 'delete'])->name('review-delete');
+Route::get('/autocomplete', [ReviewController::class, 'autocomplete'])->name('auto-complete');

@@ -160,27 +160,11 @@ class ProductController extends Controller
         return view('products.search', compact('products'));
     }
 
-    public function livesearch(Request $request)
+    public function autocomplete(Request $request)
     {
-        if ($request->ajax()) {
 
-            $output = '';
-
-            $products = Product::where('description', 'LIKE', '%' . $request->find . '%')->get();
-
-            if ($products) {
-
-                foreach ($products as $product) {
-
-                    $output .= '<li>' . $product->description . '</li>';
-                }
-            } else {
-                $output .= '<li>Search Not Found!</li>';
-            }
-
-            $output .= '</ul>';
-            echo $output;
-        }
-        // return view('products.search');
+        $dates = Product::select("description")
+            ->where("description", "LIKE", "%{$request->terms}%")->get();
+        return response()->json($dates);
     }
 }

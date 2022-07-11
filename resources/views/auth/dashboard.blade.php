@@ -108,8 +108,25 @@
     </div>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.3/typeahead.bundle.min.js"
+        integrity="sha512-E4rXB8fOORHVM/jZYNCX2rIY+FOvmTsWJ7OKZOG9x/0RmMAGyyzBqZG0OGKMpTyyuXVVoJsKKWYwbm7OU2klxA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    {{-- JQerry + Ajax --}}
+    <script>
+        var path = "{{ route('auto-complete') }}";
+        $('input.typehead').typehead({
+            source: function(terms, process) {
+                return $.get(path, {
+                    terms: terms
+                }, function(data) {
+                    return process(data);
+                })
+            }
+        })
+    </script>
+
+
+    {{-- JQerry + Ajax
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -149,7 +166,7 @@
                 $('#searchlist').fadeOut();
             });
         });
-    </script>
+    </script> --}}
 
 </body>
 
