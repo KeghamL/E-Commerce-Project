@@ -13,6 +13,7 @@
         integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 </head>
 
 <body>
@@ -26,7 +27,7 @@
                         Post</button></a>
             </li>
             <section class="search">
-                <form action="/productsearch" method="GET">
+                <form action="/productsearch" id="search-form" method="GET">
                     <div class="form-group">
                         <input type="text" id="search" class="form-control typeahead" name="find"
                             placeholder="Search Here...">
@@ -108,7 +109,40 @@
     </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function() {
+            src = "{{ route('live-search') }}"
+            $("#search").autocomplete({
+                source: function(request, response) {
+                    $.ajax({
+                        url: src,
+                        data: {
+                            term: request.term
+                        },
+                        dataType: "json",
+                        success: function(data) {
+                            response(data);
+                        }
+                    });
+                },
+                minlenght: 1,
+            });
+
+            $(document).on('click', '.ui-menu-item', function() {
+                $('#search-form').submit();
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"
         integrity="sha512-HWlJyU4ut5HkEj0QsK/IxBCY55n5ZpskyjVlAoV9Z7XQwwkqXoYdCIC93/htL3Gu5H3R4an/S0h2NXfbZk3g7w=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -127,7 +161,7 @@
                 });
             }
         });
-    </script>
+    </script> --}}
 
 
     {{-- JQerry + Ajax

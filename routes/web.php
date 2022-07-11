@@ -32,4 +32,4 @@ Route::delete('/productdelete/{product}', [ProductController::class, 'destroy'])
 Route::get('/productsearch', [ProductController::class, 'search'])->name('product-search');
 Route::post('/addstar', [ReviewController::class, 'add'])->name('add-star');
 Route::delete('/reviewdelete/{review}', [ReviewController::class, 'delete'])->name('review-delete');
-Route::get('/autocomplete', [ReviewController::class, 'autocomplete'])->name('auto-complete');
+Route::get('/livesearch', [ReviewController::class, 'livesearch'])->name('live-search');
