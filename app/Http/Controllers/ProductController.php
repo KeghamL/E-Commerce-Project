@@ -164,7 +164,7 @@ class ProductController extends Controller
     {
 
         $dates = Product::select("description")
-            ->where("description", "LIKE", "%{$request->find}%")->get();
+            ->where("description", "LIKE", "%{$request->terms}%")->get();
         return response()->json($dates);
     }
 }
