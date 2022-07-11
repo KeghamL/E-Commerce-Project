@@ -108,10 +108,9 @@
     </div>
 
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js-bootstrap-css/0.1/typeaheadjs.min.css"
-        integrity="sha512-CRdSv/52xbLj+ZopwsvCtQutNdGAq6C07FDhPfLPOMBYIo/jKmObVRHjSO5PtHa/AlBPGcJE9zLz92KQmg+erQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"
+        integrity="sha512-HWlJyU4ut5HkEj0QsK/IxBCY55n5ZpskyjVlAoV9Z7XQwwkqXoYdCIC93/htL3Gu5H3R4an/S0h2NXfbZk3g7w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
