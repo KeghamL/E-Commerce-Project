@@ -28,7 +28,7 @@
             <section class="search">
                 <form action="/productsearch" method="GET">
                     <div class="form-group">
-                        <input type="search" id="search" class="form-control typeahead" name="find"
+                        <input type="text" id="search" class="form-control typeahead" name="find"
                             placeholder="Search Here...">
                         <div id="searchlist"></div>
                     </div>
