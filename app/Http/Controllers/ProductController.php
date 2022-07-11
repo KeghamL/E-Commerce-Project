@@ -163,7 +163,7 @@ class ProductController extends Controller
     public function autocomplete(Request $request)
     {
 
-        $dates = Product::select("description")
+        $dates = Product::select("name")
             ->where("description", "LIKE", "%{$request->terms}%")->get();
         return response()->json($dates);
     }
