@@ -163,7 +163,7 @@ class ProductController extends Controller
     public function livesearch(Request $request)
     {
         $query = $request->get('term', '');
-        $products = Product::where('description', 'LIKE', '%' . $query . '%')->get();
+        $products = Product::where('description', 'iLIKE', '%' . $query . '%')->get();
 
         $data = [];
         foreach ($products as $product) {
