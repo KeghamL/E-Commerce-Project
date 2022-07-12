@@ -53,7 +53,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'price' => 'required|numeric|digits:4',
+            'price' => 'required|numeric|digits_between:3,4',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         // $data = $request->all();
