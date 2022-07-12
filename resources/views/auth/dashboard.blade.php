@@ -51,7 +51,7 @@
     </nav>
 
 
-    @if ($message = Session::get('success'))
+    {{-- @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
@@ -61,7 +61,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-    <br>
+    <br> --}}
 
     <div>
         <div class="row">
