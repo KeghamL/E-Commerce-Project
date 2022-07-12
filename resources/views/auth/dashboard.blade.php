@@ -14,6 +14,7 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@
             <section class="search">
                 <form action="/productsearch" id="search-form" method="GET">
                     <div class="form-group">
-                        <input type="text" id="search" class="form-control typeahead" name="find"
+                        <input type="text" id="search" class="form-control" name="find"
                             placeholder="Search Here...">
                         <div id="searchlist"></div>
                     </div>
@@ -113,7 +114,7 @@
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script>
         $(document).ready(function() {
-            src = "{{ route('live-search') }}"
+            src = "{{ route('live-search') }}";
             $("#search").autocomplete({
                 source: function(request, response) {
                     $.ajax({
