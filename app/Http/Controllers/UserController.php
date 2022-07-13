@@ -36,7 +36,7 @@ class UserController extends Controller
             //'password' => ['required ', ' string', 'confirmed', Password::min(8)->letters()->numbers()->mixedCase()->symbols()],
             'password' => 'required|min:3|max:8',
             'repassword' => 'required|same:password',
-            'birthday' => 'required',
+            'birthday' => 'required|before:5 years ago',
             'gender' => 'required'
 
         ]);
