@@ -79,14 +79,13 @@
                         </a>
                         <ul class="product-links">
                             @if (isset(Session::get('user')->id) && Session::get('user')->id == $product->user_id)
-                                <form action="{{ route('product-delete', $product->id) }}" method="POST">
+                                <form action="{{ route('product-delete', $product->id) }}" method="DELETE">
                                     @csrf
                                     <li><a href=" /productedit/{{ $product->id }}" data-tip="Edit"><i
                                                 class="fa fa-cog" aria-hidden="true"></i></a></li>
                                     <li><a href=" /productshow/{{ $product->id }}" data-tip="Show"><i
                                                 class="fa fa-eye" aria-hidden="true"></i></a></li>
 
-                                    @method('DELETE')
                                     <li><button data-tip="Delete"><i class="fa fa-trash" aria-hidden="true"></i>
                                     </li>
                                 </form>
