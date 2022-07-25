@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class ProductController extends Controller
 {
@@ -145,7 +146,7 @@ class ProductController extends Controller
         //$product = Product::findOrFail($id);
         $product->delete();
 
-        return redirect()->back()
+        return redirect()->route('product-dashboard')
             ->with('success', 'Product Deleted Successfully');
     }
 
