@@ -65,6 +65,7 @@ class UserController extends Controller
             'password' => 'required'
         ]);
 
+        dd($request->only(['email', 'password']));
         auth()->attempt($request->only(['email', 'password']));
 
         if ($user = auth()->user()) {
