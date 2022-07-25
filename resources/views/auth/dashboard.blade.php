@@ -71,18 +71,18 @@
                     <div class="product-image">
                         <a href="#" class="image">
 
-                            <a href="/productshow/{{ $product->id }}"><img class="pic-1"
-                                    src="{{ asset('uploads/products/' . $product->image) }}"></a>
+                            <a href="/productshow/{{ $product->id }}"><img class="pic-1" :
+                                    src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjBsYXB0b3B8ZW58MHx8MHx8&w=1000&q=80"></a>
                             <a href="/productshow/{{ $product->id }}"><img class="pic-2"
-                                    src="{{ asset('uploads/products/' . $product->image) }}">
+                                    src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjBsYXB0b3B8ZW58MHx8MHx8&w=1000&q=80">
                             </a>
                         </a>
                         <ul class="product-links">
                             @if (isset(Session::get('user')->id) && Session::get('user')->id == $product->user_id)
                                 <form action="{{ route('product-delete', $product->id) }}" method="POST">
                                     @csrf
-                                    <li><a href=" /productedit/{{ $product->id }}" data-tip="Edit"><i
-                                                class="fa fa-cog" aria-hidden="true"></i></a></li>
+                                    <li><a href=" /productedit/{{ $product->id }}" data-tip="Edit"><i class="fa fa-cog"
+                                                aria-hidden="true"></i></a></li>
                                     <li><a href=" /productshow/{{ $product->id }}" data-tip="Show"><i
                                                 class="fa fa-eye" aria-hidden="true"></i></a></li>
 
