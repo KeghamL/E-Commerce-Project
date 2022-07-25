@@ -36,12 +36,12 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ $data->fname }}</td>
-                <td>{{ $data->lname }}</td>
-                <td>{{ $data->email }}</td>
-                <td>{{ $data->password }}</td>
-                <td>{{ $data->birthday }}</td>
-                <td>{{ $data->gender }}</td>
+                <td>{{ $user->fname }}</td>
+                <td>{{ $user->lname }}</td>
+                <td>{{ $user->email }}</td>
+                <td>{{ $user->password }}</td>
+                <td>{{ $user->birthday }}</td>
+                <td>{{ $user->gender }}</td>
             </tr>
         </tbody>
     </table>

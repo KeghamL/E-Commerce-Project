@@ -21,7 +21,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="userinfo">{{ Session::get('user')->fname }}</a>
+        <a class="navbar-brand" href="userinfo">{{ $authUser->fname }}</a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a href="/productcreate"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add
@@ -78,7 +78,7 @@
                             </a>
                         </a>
                         <ul class="product-links">
-                            @if (isset(Session::get('user')->id) && Session::get('user')->id == $product->user_id)
+                            @if (isset($authUser->id) && $authUser->id == $product->user_id)
                                 <form action="{{ route('product-delete', $product->id) }}" method="POST">
                                     {{ method_field('DELETE') }}
                                     {!! csrf_field() !!}
