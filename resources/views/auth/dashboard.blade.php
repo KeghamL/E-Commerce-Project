@@ -21,6 +21,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        @dd($authUser);
         <a class="navbar-brand" href="userinfo">{{ $authUser->fname }}</a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
