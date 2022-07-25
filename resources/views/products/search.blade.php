@@ -25,9 +25,9 @@
                         <a href="#" class="image">
 
                             <a href="/productshow/{{ $product->id }}"><img class="pic-1"
-                                    src="{{ asset('uploads/products/' . $product->image) }}"></a>
+                                    src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjBsYXB0b3B8ZW58MHx8MHx8&w=1000&q=80"></a>
                             <a href="/productshow/{{ $product->id }}"><img class="pic-2"
-                                    src="{{ asset('uploads/products/' . $product->image) }}">
+                                    src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjBsYXB0b3B8ZW58MHx8MHx8&w=1000&q=80">
                             </a>
                         </a>
                         <ul class="product-links">
