@@ -61,11 +61,11 @@ class UserController extends Controller
     {
 
         $request->validate([
-            'email' => 'required|email|exists:users',
+            'email' => 'required|email',
             'password' => 'required'
         ]);
 
-        dd($request->only(['email', 'password']));
+        // dd($request->only(['email', 'password']));
         auth()->attempt($request->only(['email', 'password']));
 
         if ($user = auth()->user()) {
