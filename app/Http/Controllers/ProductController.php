@@ -145,8 +145,9 @@ class ProductController extends Controller
     {
         //$product = Product::findOrFail($id);
         $product->delete();
+        dd(auth()->user());
 
-        return redirect()->back()
+        return back()
             ->with('success', 'Product Deleted Successfully');
     }
 

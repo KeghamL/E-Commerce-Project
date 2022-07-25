@@ -67,6 +67,11 @@ class UserController extends Controller
 
         ]);
 
+        $user = auth()->attempt($request->only(['email', 'password']));
+        dd($user);
+
+
+
         $user = User::where('email', '=', $request->email)->first();
         if ($user) {
 

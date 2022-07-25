@@ -18,18 +18,21 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/register', [UserController::class, 'registration']);
 Route::get('/login', [UserController::class, 'login']);
-Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-Route::get('/userinfo', [UserController::class, 'userInfo'])->middleware('alreadyloggedin');
-Route::post('/register-user', [UserController::class, 'registerUser'])->name('register-user');
-Route::get('/dashboard', [ProductController::class, 'index'])->middleware('isloggedin')->name('product-dashboard');
-Route::post('/dashboard', [UserController::class, 'loginUser'])->middleware('alreadyloggedin')->name('login-user');
-Route::get('/productcreate', [ProductController::class, 'create'])->name('product-create');
-Route::post('/productstore', [ProductController::class, 'store'])->name('product-store');
-Route::get('/productshow/{product}', [ProductController::class, 'show'])->name('product-show');
-Route::get('/productedit/{product}', [ProductController::class, 'edit'])->name('product-edit');
-Route::put('/productupdate/{product}', [ProductController::class, 'update'])->name('product-update');
-Route::delete('/productdelete/{product}', [ProductController::class, 'destroy'])->name('product-delete');
-Route::get('/productsearch', [ProductController::class, 'search'])->name('product-search');
-Route::post('/addstar', [ReviewController::class, 'add'])->name('add-star');
-Route::delete('/reviewdelete/{review}', [ReviewController::class, 'delete'])->name('review-delete');
-Route::get('/livesearch', [ProductController::class, 'livesearch'])->name('live-search');
+
+Route::group(['middleware' => 'web'], function () {
+    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+    Route::get('/userinfo', [UserController::class, 'userInfo'])->middleware('alreadyloggedin');
+    Route::post('/register-user', [UserController::class, 'registerUser'])->name('register-user');
+    Route::get('/dashboard', [ProductController::class, 'index'])->middleware('isloggedin')->name('product-dashboard');
+    Route::post('/dashboard', [UserController::class, 'loginUser'])->middleware('alreadyloggedin')->name('login-user');
+    Route::get('/productcreate', [ProductController::class, 'create'])->name('product-create');
+    Route::post('/productstore', [ProductController::class, 'store'])->name('product-store');
+    Route::get('/productshow/{product}', [ProductController::class, 'show'])->name('product-show');
+    Route::get('/productedit/{product}', [ProductController::class, 'edit'])->name('product-edit');
+    Route::put('/productupdate/{product}', [ProductController::class, 'update'])->name('product-update');
+    Route::delete('/productdelete/{product}', [ProductController::class, 'destroy'])->name('product-delete');
+    Route::get('/productsearch', [ProductController::class, 'search'])->name('product-search');
+    Route::post('/addstar', [ReviewController::class, 'add'])->name('add-star');
+    Route::delete('/reviewdelete/{review}', [ReviewController::class, 'delete'])->name('review-delete');
+    Route::get('/livesearch', [ProductController::class, 'livesearch'])->name('live-search');
+});
