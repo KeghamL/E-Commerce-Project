@@ -14,13 +14,13 @@ class AuthCheck
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
-    {
+    // public function handle(Request $request, Closure $next)
+    // {
 
-        // if (!Session()->has('loginId')) {
-        //       return redirect('login')->with('fail' ,'You Have To Login First!' );
-        // }
-        // return $next($request);
+    //     if (!Session()->has('loginId')) {
+    //           return redirect('login')->with('fail' ,'You Have To Login First!' );
+    //     }
+    //     return $next($request);
 
-    }
+    // }
 }
