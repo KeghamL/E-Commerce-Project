@@ -202,15 +202,6 @@
             });
         });
     </script> --}}
-    <script>
-        $(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
