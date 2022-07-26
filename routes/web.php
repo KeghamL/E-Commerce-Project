@@ -19,7 +19,7 @@ use App\Http\Controllers\ProductController;
 Route::get('/register', [UserController::class, 'registration']);
 Route::get('/login', [UserController::class, 'login']);
 
-Route::group(['middleware' => 'web'], function () {
+Route::get('profile', function () {
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
     Route::get('/userinfo', [UserController::class, 'userInfo'])->middleware('alreadyloggedin');
     Route::post('/register-user', [UserController::class, 'registerUser'])->name('register-user');
@@ -35,4 +35,4 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/addstar', [ReviewController::class, 'add'])->name('add-star');
     Route::delete('/reviewdelete/{review}', [ReviewController::class, 'delete'])->name('review-delete');
     Route::get('/livesearch', [ProductController::class, 'livesearch'])->name('live-search');
-});
+})->middleware('auth');
