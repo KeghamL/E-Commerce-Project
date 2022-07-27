@@ -66,7 +66,7 @@ class ProductController extends Controller
             $file->move($destinationPath, $filename);
             $input['image'] = "$filename";
         }
-        $input['user_id'] = $authUser->id;
+        $input['user_id'] = auth()->user()->id->id;
 
         Product::create($input);
 
@@ -126,7 +126,7 @@ class ProductController extends Controller
             unset($input['image']);
         }
 
-        $input['user_id'] = $authUser->id;
+        $input['user_id'] = auth()->user()->id;
 
         $product->update($input);
 

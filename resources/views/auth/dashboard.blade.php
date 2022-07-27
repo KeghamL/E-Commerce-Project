@@ -71,22 +71,23 @@
                     <div class="product-image">
                         <a href="#" class="image">
 
-                            <a href="/productshow/{{ $product->id }}"><img class="pic-1"
-                                    src="{{ asset('uploads/products/' . $product->image) }}"></a>
+                            <a href="/productshow/{{ $product->id }}"><img class="pic-1" :
+                                    src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjBsYXB0b3B8ZW58MHx8MHx8&w=1000&q=80"></a>
                             <a href="/productshow/{{ $product->id }}"><img class="pic-2"
-                                    src="{{ asset('uploads/products/' . $product->image) }}">
+                                    src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjBsYXB0b3B8ZW58MHx8MHx8&w=1000&q=80">
                             </a>
                         </a>
                         <ul class="product-links">
                             @if (isset($authUser->id) && $authUser->id == $product->user_id)
                                 <form action="{{ route('product-delete', $product->id) }}" method="POST">
-                                    @csrf
+                                    {{ method_field('DELETE') }}
+                                    {!! csrf_field() !!}
                                     <li><a href=" /productedit/{{ $product->id }}" data-tip="Edit"><i
                                                 class="fa fa-cog" aria-hidden="true"></i></a></li>
                                     <li><a href=" /productshow/{{ $product->id }}" data-tip="Show"><i
                                                 class="fa fa-eye" aria-hidden="true"></i></a></li>
 
-                                    @method('DELETE')
+
                                     <li><button data-tip="Delete"><i class="fa fa-trash" aria-hidden="true"></i>
                                     </li>
                                 </form>
@@ -137,9 +138,6 @@
             });
         });
     </script>
-
-
-
 
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"
         integrity="sha512-HWlJyU4ut5HkEj0QsK/IxBCY55n5ZpskyjVlAoV9Z7XQwwkqXoYdCIC93/htL3Gu5H3R4an/S0h2NXfbZk3g7w=="
@@ -204,7 +202,6 @@
             });
         });
     </script> --}}
-
 </body>
 
 </html>
