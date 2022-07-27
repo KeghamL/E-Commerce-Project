@@ -21,7 +21,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="userinfo">{{ $authUser->fname }}</a>
+        <a class="navbar-brand" href="userinfo">{{ Session::get('user')->fname }}</a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a href="/productcreate"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add
@@ -71,23 +71,22 @@
                     <div class="product-image">
                         <a href="#" class="image">
 
-                            <a href="/productshow/{{ $product->id }}"><img class="pic-1" :
-                                    src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjBsYXB0b3B8ZW58MHx8MHx8&w=1000&q=80"></a>
+                            <a href="/productshow/{{ $product->id }}"><img class="pic-1"
+                                    src="{{ asset('uploads/products/' . $product->image) }}"></a>
                             <a href="/productshow/{{ $product->id }}"><img class="pic-2"
-                                    src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjBsYXB0b3B8ZW58MHx8MHx8&w=1000&q=80">
+                                    src="{{ asset('uploads/products/' . $product->image) }}">
                             </a>
                         </a>
                         <ul class="product-links">
-                            @if (isset($authUser->id) && $authUser->id == $product->user_id)
+                            @if (isset(Session::get('user')->id) && Session::get('user')->id == $product->user_id)
                                 <form action="{{ route('product-delete', $product->id) }}" method="POST">
-                                    {{ method_field('DELETE') }}
-                                    {!! csrf_field() !!}
+                                    @csrf
                                     <li><a href=" /productedit/{{ $product->id }}" data-tip="Edit"><i
                                                 class="fa fa-cog" aria-hidden="true"></i></a></li>
                                     <li><a href=" /productshow/{{ $product->id }}" data-tip="Show"><i
                                                 class="fa fa-eye" aria-hidden="true"></i></a></li>
 
-
+                                    @method('DELETE')
                                     <li><button data-tip="Delete"><i class="fa fa-trash" aria-hidden="true"></i>
                                     </li>
                                 </form>
@@ -202,6 +201,7 @@
             });
         });
     </script> --}}
+
 </body>
 
 </html>

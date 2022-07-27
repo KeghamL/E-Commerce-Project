@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class ProductController extends Controller
 {
@@ -23,12 +22,6 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
 
@@ -73,7 +66,7 @@ class ProductController extends Controller
             $file->move($destinationPath, $filename);
             $input['image'] = "$filename";
         }
-        $input['user_id'] = Auth()->user()->id;
+        $input['user_id'] = Session::get('user')->id;
 
         Product::create($input);
 
@@ -133,7 +126,7 @@ class ProductController extends Controller
             unset($input['image']);
         }
 
-        $input['user_id'] = Auth()->user()->id;
+        $input['user_id'] = Session::get('user')->id;
 
         $product->update($input);
 
@@ -151,9 +144,8 @@ class ProductController extends Controller
     {
         //$product = Product::findOrFail($id);
         $product->delete();
-        // dd(auth()->user());
 
-        return back()
+        return redirect()->back()
             ->with('success', 'Product Deleted Successfully');
     }
 

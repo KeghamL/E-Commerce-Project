@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Validation\Rules\Password;
+use App\Models\Product;
 use Mockery\Generator\StringManipulation\Pass\Pass;
 
 class UserController extends Controller
@@ -61,34 +61,47 @@ class UserController extends Controller
     {
 
         $request->validate([
+
             'email' => 'required|email',
             'password' => 'required'
+
         ]);
 
-        // dd($request->only(['email', 'password']));
-        auth()->attempt($request->only(['email', 'password']));
+        $user = User::where('email', '=', $request->email)->first();
+        if ($user) {
 
-        if ($user = auth()->user()) {
-            $products = Product::paginate(6);
+            if (Hash::check($request->password, $user->password)) {
 
-            return view('auth.dashboard', compact("products"));
+                $request->session()->put('loginId', $user->id);
+                $request->session()->put('user', $user);
+
+                $products = Product::paginate(6);
+
+                return view('auth.dashboard', compact("user", "products"));
+            } else {
+                return back()->with('fail', 'Password Didnt Match!');
+            }
         } else {
-            return back()->with('fail', 'Password Didnt Match!');
+            return back()->with('fail', 'This Email Is Not Registered!');
         }
     }
 
 
     public function userInfo()
     {
-        $user = auth()->user();
-        return view('auth.userinfo', compact('user'));
+        $date = array();
+        if (Session::has('loginId')) {
+            $data = User::where('id', '=', Session::get('loginId'))->first();
+        }
+        return view('auth.userinfo',  compact('data'));
     }
 
 
 
-    public function logout()
+    public function logout(Request $request)
     {
-        auth()->logout();
+
+        Session::flush();
         return redirect('login');
     }
 }
