@@ -21,8 +21,8 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="userinfo">{{ $authUser->fname }}</a>
-        {{ dd($authUser) }}
+        <a class="navbar-brand" href="userinfo">{{ auth()->user()->fname }}</a>
+        {{ dd(auth()->user()->fname) }}
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a href="/productcreate"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add
