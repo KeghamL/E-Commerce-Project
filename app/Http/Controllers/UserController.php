@@ -65,8 +65,8 @@ class UserController extends Controller
             'password' => 'required'
         ]);
 
-        dd($user = auth()->user());
         auth()->attempt($request->only(['email', 'password']));
+        dd(auth()->user());
 
         if ($user = auth()->user()) {
             $products = Product::paginate(6);
