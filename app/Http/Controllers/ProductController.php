@@ -66,7 +66,7 @@ class ProductController extends Controller
             $file->move($destinationPath, $filename);
             $input['image'] = "$filename";
         }
-        $input['user_id'] = auth()->user()->id->id;
+        $input['user_id'] = auth()->user()->id;
 
         Product::create($input);
 
