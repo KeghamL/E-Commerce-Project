@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand">{{ $authUser->fname }}</a>
+    <a class="navbar-brand">{{ auth()->user()->fname }}</a>
     <div class="nav-item active" style="padding-right: 20px">
         <a href="/dashboard"><button class="btn btn-info" type="submit">Home</button></button></a>
     </div>
@@ -31,7 +31,7 @@
                             </a>
                         </a>
                         <ul class="product-links">
-                            @if (isset($authUser->id) && $authUser->id == $product->user_id)
+                            @if (isset(auth()->user()->id) && auth()->user()->id == $product->user_id)
                                 <form action="{{ route('product-delete', $product->id) }}" method="POST">
                                     <li><a href=" /productedit/{{ $product->id }}" data-tip="Edit"><i class="fa fa-cog"
                                                 aria-hidden="true"></i></a></li>

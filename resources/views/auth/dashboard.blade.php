@@ -78,7 +78,7 @@
                             </a>
                         </a>
                         <ul class="product-links">
-                            @if (isset($authUser->id) && $authUser->id == $product->user_id)
+                            @if (isset(auth()->user()->id) && auth()->user()->id == $product->user_id)
                                 <form action="{{ route('product-delete', $product->id) }}" method="POST">
                                     {{ method_field('DELETE') }}
                                     {!! csrf_field() !!}
