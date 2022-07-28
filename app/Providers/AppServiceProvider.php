@@ -31,8 +31,8 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-        auth()->user() = auth()->user() ?? (new User);
+        $authUser = auth()->user() ?? (new User);
 
-        view()->share('authUser', auth()->user());
+        view()->share('authUser', $authUser);
     }
 }
