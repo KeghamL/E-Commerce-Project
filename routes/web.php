@@ -20,7 +20,7 @@ Route::get('/register', [UserController::class, 'registration']);
 Route::get('/login', [UserController::class, 'login'])->name('login');
 
 Route::group(['middleware' => 'web'], function () {
-    Route::post('/dashboard', [UserController::class, 'loginUser'])->name('login-user');
+    Route::post('/dashboard', [UserController::class, 'loginUser'])->Middleware('isloggedin')->name('login-user');
     Route::get('/userinfo', [UserController::class, 'userInfo']);
     Route::post('/register-user', [UserController::class, 'registerUser'])->name('register-user');
 
