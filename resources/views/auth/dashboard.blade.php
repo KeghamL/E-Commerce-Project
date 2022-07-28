@@ -80,8 +80,8 @@
                         <ul class="product-links">
                             @if (isset(auth()->user()->id) && auth()->user()->id == $product->user_id)
                                 <form action="{{ route('product-delete', $product->id) }}" method="POST">
-                                    {{ method_field('DELETE') }}
-                                    {!! csrf_field() !!}
+                                    @csrf
+                                    @method('delete')
                                     <li><a href=" /productedit/{{ $product->id }}" data-tip="Edit"><i
                                                 class="fa fa-cog" aria-hidden="true"></i></a></li>
                                     <li><a href=" /productshow/{{ $product->id }}" data-tip="Show"><i
