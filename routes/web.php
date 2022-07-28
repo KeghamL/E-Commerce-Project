@@ -17,11 +17,11 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/register', [UserController::class, 'registration']);
-Route::get('/login', [UserController::class, 'login'])->Middleware('alreadyloggedin')->name('login');
+Route::get('/login', [UserController::class, 'login'])->name('login');
 
 Route::group(['middleware' => 'web'], function () {
-    Route::post('/dashboard', [UserController::class, 'loginUser'])->Middleware('alreadyloggedin')->name('login-user');
-    Route::get('/userinfo', [UserController::class, 'userInfo']);
+    Route::post('/dashboard', [UserController::class, 'loginUser'])->withoutMiddleware('auth')->name('login-user');
+    Route::get('/userinfo', [UserController::class, 'userInfo'])->withoutMiddleware('auth');
     Route::post('/register-user', [UserController::class, 'registerUser'])->name('register-user');
 
     Route::group(['middleware' => 'auth'], function () {
