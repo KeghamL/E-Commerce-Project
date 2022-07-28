@@ -26,11 +26,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Paginator::useBootstrap();
         if (env('APP_ENV') === 'production') {
             URL::forceScheme('https');
         }
-
+        $this->app['request']->server->set('HTTPS', 'on');
+        Paginator::useBootstrap();
         $authUser = auth()->user() ?? (new User);
 
         view()->share('authUser', $authUser);
