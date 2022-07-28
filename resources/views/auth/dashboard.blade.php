@@ -88,7 +88,7 @@
                                                 class="fa fa-eye" aria-hidden="true"></i></a></li>
 
 
-                                    <li><button data-tip="Delete"><i class="fa fa-trash" aria-hidden="true"></i>
+                                    <li><button data-tip="Delete" type="submit"><i class="fa fa-trash" aria-hidden="true"></i>
                                     </li>
                                 </form>
                             @endif
