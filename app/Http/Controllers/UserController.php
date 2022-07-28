@@ -66,7 +66,7 @@ class UserController extends Controller
         ]);
 
         auth()->attempt($request->only(['email', 'password']));
-        dd(auth()->user());
+        // dd(auth()->user());
 
         if ($user = auth()->user()) {
             $products = Product::paginate(6);
