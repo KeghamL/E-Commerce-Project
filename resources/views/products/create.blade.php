@@ -63,7 +63,8 @@
 
                     <strong>Product Name:</strong>
 
-                    <input type="text" name="name" class="form-control" placeholder="Name">
+                    <input type="text" name="name" class="form-control" placeholder="Name"
+                        value="{{ old('name') }}">
 
                 </div>
 
@@ -74,7 +75,8 @@
 
                     <strong>Product Description:</strong>
 
-                    <input type="text" name="description" class="form-control" placeholder="Description">
+                    <input type="text" name="description" class="form-control" placeholder="Description"
+                        value="{{ old('description') }}">
 
                 </div>
 
@@ -86,7 +88,8 @@
 
                     <strong>Product Price:</strong>
 
-                    <input type="text" name="price" class="form-control" placeholder="Price">
+                    <input type="text" name="price" class="form-control" placeholder="Price"
+                        value="{{ old('price') }}">
 
                 </div>
 
