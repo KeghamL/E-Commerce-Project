@@ -17,7 +17,7 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/register', [UserController::class, 'registration']);
-Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/login', [UserController::class, 'login'])->Middleware('alreadyloggedin')->name('login');
 
 Route::group(['middleware' => 'web'], function () {
     Route::post('/dashboard', [UserController::class, 'loginUser'])->Middleware('alreadyloggedin')->name('login-user');
