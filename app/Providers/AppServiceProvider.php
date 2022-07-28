@@ -31,8 +31,9 @@ class AppServiceProvider extends ServiceProvider
         }
         $this->app['request']->server->set('HTTPS', 'on');
         Paginator::useBootstrap();
-        $authUser = auth()->user() ?? (new User);
 
-        view()->share('authUser', $authUser);
+        // $authUser = auth()->user() ?? (new User);
+
+        // view()->share('authUser', $authUser);
     }
 }
