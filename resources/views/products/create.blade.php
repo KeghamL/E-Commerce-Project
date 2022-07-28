@@ -101,7 +101,8 @@
 
                     <strong>Product Image:</strong>
 
-                    <input type="file" name="image" class="form-control" placeholder="Photo">
+                    <input type="file" name="image" class="form-control" placeholder="Photo"
+                        value="{{ old('image') }}">
 
                 </div>
 
