@@ -24,11 +24,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-
         $products = Product::paginate(6);
         $reviews = Review::all();
         return view('auth.dashboard', compact('products', 'reviews'));
-        // ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
