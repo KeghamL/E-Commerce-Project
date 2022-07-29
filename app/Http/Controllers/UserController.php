@@ -52,7 +52,6 @@ class UserController extends Controller
         if ($res == true) {
             return redirect('login')->with('success', 'User Register Successfully!');
         } else {
-
             return back()->with('fail', 'Something Went Wrong!');
         }
     }
@@ -66,7 +65,6 @@ class UserController extends Controller
         ]);
 
         auth()->attempt($request->only(['email', 'password']));
-        // dd(auth()->user());
 
         if ($user = auth()->user()) {
             $products = Product::paginate(6);
