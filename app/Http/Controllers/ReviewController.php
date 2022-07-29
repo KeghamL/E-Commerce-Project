@@ -35,13 +35,6 @@ class ReviewController extends Controller
         if ($product_check) {
             if (!Review::where('user_id', auth()->user()->id)->where('product_id', $product_id)->exists()) {
 
-                // $existing_review = Review::where('user_id', auth()->user()->id);
-                // if ($existing_review) {
-                //     $existing_review->star = $star;
-                //     $existing_review->comment = $comment;
-
-                //     $existing_review->update();
-
                 Review::create([
                     'user_id' => auth()->user()->id,
                     'product_id' => $product_id,
